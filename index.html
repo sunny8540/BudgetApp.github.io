@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget App</title>
+    <!--style  -->
+    <style>
+       *{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: lightblue;
+
+}
+.main   {
+    background-color: aliceblue;
+    margin-left: 300px;
+    width: 800px;
+    height: 500px;
+    border: 1px solid gray;
+}
+.header{
+     padding: 10px 10px ;
+}
+.budget{
+    margin-left: 10px;
+    width: 350px;
+    height:130px;
+    border: 2px solid lightgreen;
+}
+.value{
+
+    margin:10px 10px ;
+}
+.budgetInput{
+    width: 300px;
+    height: 20px;
+    margin-top:10px ;
+}
+p1{
+    border: 1px solid black;
+    padding: 10px 10px;
+    cursor: pointer;
+}
+p1:hover{
+    background-color: lightgreen;
+    color: green;
+}
+.value1{
+    width: 330px;
+    margin: 10px 10px;
+    border: 1px solid lightcoral;
+    padding: 10px 10px;
+
+}
+.input{
+    margin-top: 10px;
+    width: 250px;
+    height: 20px;
+    border: 1px solid lightcoral;
+
+}
+ul > li{
+    list-style-type: none;
+    display: inline;
+    margin-left: 100px;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+}
+.view > ul > li{
+    display: inline;
+    margin-left:100px ;
+}
+.addExpences{
+    width: 50px;
+    text-align: center;
+    line-height: 20px;
+
+    border: 1px solid lightcoral;
+    cursor: pointer;
+}
+.addExpences:hover{
+    background-color: lightcoral;
+    color:black;
+} 
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="containt">
+            <div class="header">BUDGET APP</div>
+            <div class="budget">
+                <div class="value">
+                    <p>Please Enter Your Budget</p>
+                    <input type="number" class="budgetInput"><br><br>
+                    <p1 class="calculate">calculation</p1></div>
+            </div>
+            <div class="main1">
+                <div class="value1">
+                    <p>Please Enter Your Expense</p>
+                    <input type="number" class="input" class="input1">
+                    <br><br>
+                    <p>Please Enter Your Expense Amount</p>
+                    <input type="number" class="input" class="input2"><br><br>
+                    <div class="addExpences">Add</div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="calculation">
+        <ul>
+            <li>BUDGET</li>
+            <li>EXPENSE</li>
+            <li>BALANCE</li>
+        </ul></div>
+        <div class="view">
+<ul>
+<li class="budget1"></li>
+<li class="Expense1"></li>
+<li class="balance1"></li>
+</ul>        
+</div>
+    <script>  
+        let b=document.querySelector(".input2").value;
+        let num2=Number(b);
+        document.querySelector(".calculate").addEventListener("click",function(){
+        document.querySelector(".budget1").innerHTML=document.querySelector(".budgetInput").value;});
+        document.querySelector(".addExpences").addEventListener("click",function(){
+            let c=document.querySelector(".budget1").innerHTML;
+            let num3=Number(c);
+            document.querySelector(".balance1").innerHTML=`${c} - ${num2}`;
+        });
+    </script>
+
+</body>
+</html>
